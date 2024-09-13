@@ -1,0 +1,29 @@
+<%= form_with model: @book, local: true do |form| %>
+  <div>
+    <%= form.label :title, "Title" %>
+    <%= form.text_field :title, required: true, placeholder: "Enter book title" %>
+    <% @book.errors.full_messages_for(:title).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :author, "Author" %>
+    <%= form.text_field :author, required: true, placeholder: "Enter book author" %>
+    <% @book.errors.full_messages_for(:author).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :isbn, "ISBN" %>
+    <%= form.text_field :isbn, required: true, placeholder: "Enter book ISBN" %>
+    <% @book.errors.full_messages_for(:isbn).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.submit 'Add Book' %>
+  </div>
+<% end %>
