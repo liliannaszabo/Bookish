@@ -7,3 +7,30 @@
   } %></li>
   
 </ul>
+
+Copies
+<% @book.copies.each do |copy| %>
+  <p>
+    Borrower: <%= copy.borrower %>
+  </p>
+  <p>
+    Due Date: <%= copy.due_date %>
+  </p>
+  <p>__</p>
+<% end %>
+
+
+<h2>Add a copy:</h2>
+<%= form_with model: [ @book, @book.copies.build ] do |form| %>
+  <p>
+    <%= form.label :borrower %><br>
+    <%= form.text_field :borrower %>
+  </p>
+  <p>
+    <%= form.label :due_date %><br>
+    <%= form.text_field :due_date %>
+  </p>
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>

@@ -1,4 +1,4 @@
-<%= form_with model: @book, local: true do |form| %>
+<%= form_with model: @book do |form| %>
   <div>
     <%= form.label :title, "Title" %>
     <%= form.text_field :title, required: true, placeholder: "Enter book title" %>
@@ -24,6 +24,6 @@
   </div>
 
   <div>
-    <%= form.submit 'Add Book' %>
+    <%= form.submit 'Submit' %>
   </div>
 <% end %>
