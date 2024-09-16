@@ -1,10 +1,9 @@
 class CopiesController < ApplicationController
   def index
-    @book = Book.find(params[:book_id])
-    @copies = @book.copies
+    @copies = Book.find(params[:book_id]).copies
   end
   def show
-    @copy = params
+    @copy = Book.find(params[:book_id]).copies.find(params[:id])
   end
 
 

@@ -1,25 +1,25 @@
 <%= form_with model: @book do |form| %>
   <div>
     <%= form.label :title, "Title" %>
-    <%= form.text_field :title, required: true, placeholder: "Enter book title" %>
+    <%= form.text_field :title, required: true, aria: { describedby: 'title-error' } %>
     <% @book.errors.full_messages_for(:title).each do |message| %>
-      <div><%= message %></div>
+      <div id="title-error"><%= message %></div>
     <% end %>
   </div>
 
   <div>
     <%= form.label :author, "Author" %>
-    <%= form.text_field :author, required: true, placeholder: "Enter book author" %>
+    <%= form.text_field :author, required: true, aria: { describedby: 'author-error' } %>
     <% @book.errors.full_messages_for(:author).each do |message| %>
-      <div><%= message %></div>
+      <div id="author-error"><%= message %></div>
     <% end %>
   </div>
 
   <div>
     <%= form.label :isbn, "ISBN" %>
-    <%= form.text_field :isbn, required: true, placeholder: "Enter book ISBN" %>
+    <%= form.text_field :isbn, required: true, aria: { describedby: 'isbn-error' } %>
     <% @book.errors.full_messages_for(:isbn).each do |message| %>
-      <div><%= message %></div>
+      <div id="isbn-error"><%= message %></div>
     <% end %>
   </div>
 

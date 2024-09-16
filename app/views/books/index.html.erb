@@ -1,10 +1,8 @@
 <h1>My Books</h1>
 <ul>
-  <% @books.sort_by(&:title).each do|book| %>
+  <% @books.sort_by(&:title).each do |book| %>
     <li>
-      <a href="/books/<%= book.id %>">
-        <%= book.title %>
-      </a>
+      <%= link_to book.title, book_path(book) %>
     </li>
   <% end %>
 </ul>
