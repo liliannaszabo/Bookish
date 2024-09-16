@@ -23,15 +23,15 @@
 !/tmp/pids/.keep
 
 # Ignore uploaded files in development.
-/storage/*
-!/storage/.keep
+/back-end/storage/*
+!/back-end/storage/.keep
 /tmp/storage/*
 !/tmp/storage/
 !/tmp/storage/.keep
 
-/public/assets
+/back-end/public/assets
 
 # Ignore master key for decrypting credentials and more.
-/config/master.key
+/back-end/config/master.key
 
 .idea/
