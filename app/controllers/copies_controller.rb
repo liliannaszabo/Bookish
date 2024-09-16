@@ -9,9 +9,9 @@ class CopiesController < ApplicationController
 
 
   def create
-    @book = Book.find(params[:id])
+    @book = Book.find(params[:book_id])
     @copy = @book.copies.create(comment_params)
-    redirect_to book_path
+    redirect_to book_path(@book)
   end
 
 
